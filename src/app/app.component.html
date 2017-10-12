@@ -1,0 +1,50 @@
+<h1>
+  {{title}}
+</h1>
+<div>
+      <div class="dp-picker-day">
+        <dp-date-picker id="datePicker"
+                        name="datePicker"
+                        #datePicker
+                        #datePickerModel="ngModel"
+                        [(ngModel)]="date"
+                        [mode]="'day'"
+                        [displayDate]="displayDate"
+                        [disabled]="disabled"                        
+                        [config]="config"
+                        [theme]="material ? 'dp-material' : ''">
+        </dp-date-picker>
+        <div class="dp-validations" *ngIf="datePickerModel.errors">
+          <div id="requiredValidation" *ngIf="datePickerModel.errors.required">required</div>
+          <div id="formatValidation" *ngIf="datePickerModel.errors.format">invalid format
+          </div>
+          <div id="minDateValidation" *ngIf="datePickerModel.errors.minDate">minDate invalid
+          </div>
+          <div id="maxDateValidation" *ngIf="datePickerModel.errors.maxDate">maxDate invalid
+          </div>
+        </div>
+      </div>
+<div>
+  <!-- 
+            <dp-date-picker id="datePicker"
+                        name="datePicker"
+                        #datePicker
+                        #datePickerModel="ngModel"
+                        [(ngModel)]="date"
+                        (onChange)="log($event)"
+                        [mode]="'day'"
+                        [displayDate]="displayDate"
+                        [disabled]="disabled"
+                        (open)="opened()"
+                        (close)="closed()"
+                        [minDate]="validationMinDate"
+                        [maxDate]="validationMaxDate"
+                        [required]="required"
+                        [placeholder]="placeholder"
+                        [config]="config"
+                        [theme]="material ? 'dp-material' : ''">
+        </dp-date-picker>
+  -->        
+<hr>
+<br>
+
